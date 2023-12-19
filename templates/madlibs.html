@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}Madlibs Form{% endblock %}
+{% block content %}
+    <h1>Madlibs Form</h1>
+    <small id="alert" style="display: none;" hidden>Please fill in all form fields. Each word should be at least 3 characters long.</small>
+    <form id="form-story" action="/story">
+        {% for prompt in prompts %}
+            <label for="input-{{prompt.replace('_', '-')}}">{{prompt.replace('_', ' ').title()}}:</label>
+            {% if prompt == 'number' %}
+                <input type="number" id="input-{{prompt.replace('_', '-')}}" name="{{prompt}}" placeholder="Enter a {{prompt.lower().replace('_', ' ')}}" min="1" max="999999999999999" required>
+            {% else %}
+                <input type="text" id="input-{{prompt.replace('_', '-')}}" name="{{prompt}}" placeholder="Enter a {{prompt.lower().replace('_', ' ')}}" minlength="3" maxlength="75" required>
+            {% endif %}
+            <br /><br />
+        {% endfor %}
+        <button>Submit</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,24 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+#content {
+    margin: 1.5rem;
+}
+#alert {
+    color: red;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+input, .type {
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+button {
+    display: block;
+    padding: .5rem;
+    cursor: pointer;
+}
